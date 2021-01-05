@@ -6,8 +6,9 @@ import Backdrop from "../Backdrop/Backdrop";
 
 class Model extends Component {
     //this could be a functional component, dosn't have to be a class
+    // model is updating only if the belowcondition is true... - isuri
     shouldComponentUpdate (nextProps, nextState){
-        return nextProps.show !== this.props.show; //if(nPr !== pr.show) return true
+        return (nextProps.show !== this.props.show || nextProps.children !== this.props.children); //if(nPr !== pr.show) return true
     }
 render () {
     return (
