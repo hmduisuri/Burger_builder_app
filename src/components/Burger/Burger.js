@@ -1,15 +1,15 @@
-import React from "react"
-import classes from "./Burger.css"
-import BurgerIngredient from "./BurgerIngredient/BurgerIngredient"
+import React from "react";
+import classes from "./Burger.css";
+import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
 const burger = (props) => {
-    console.log(props);
+    // console.log(props);
     
     let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
         return [...Array(props.ingredients[igKey])].map((_,i) =>  {
            return <BurgerIngredient key={igKey + (Math.random()*100).toFixed(3)} type = {igKey}/>;
         });
-    }) .reduce((arr,el)  => {
+    }).reduce((arr,el)  => {
         return arr.concat(el);
     },[]);
     
